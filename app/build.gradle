@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.1"
+
+    defaultConfig {
+        applicationId "com.me.smartchina"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile project(':SlidingMenuLibrary')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'org.xutils:xutils:3.3.36'
+    compile 'com.alibaba:fastjson:1.1.52.android'
+    compile project(':ViewPagerIndicatorLibrary')
+    compile 'junit:junit:4.12'
+    compile files('src/main/libs/MobCommons-2016.0816.1507.jar')
+    compile files('src/main/libs/MobTools-2016.0816.1507.jar')
+    compile files('src/main/libs/ShareSDK-Core-2.7.6.jar')
+    compile files('src/main/libs/ShareSDK-Douban-2.7.6.jar')
+    compile files('src/main/libs/ShareSDK-QQ-2.7.6.jar')
+    compile files('src/main/libs/ShareSDK-QZone-2.7.6.jar')
+    compile files('src/main/libs/ShareSDK-SinaWeibo-2.7.6.jar')
+    compile files('src/main/libs/ShareSDK-TencentWeibo-2.7.6.jar')
+    compile files('src/main/libs/ShareSDK-Wechat-2.7.6.jar')
+    compile files('src/main/libs/ShareSDK-Wechat-Core-2.7.6.jar')
+    compile files('src/main/libs/ShareSDK-Wechat-Favorite-2.7.6.jar')
+    compile files('src/main/libs/ShareSDK-Wechat-Moments-2.7.6.jar')
+}
