@@ -10,6 +10,18 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "7b42c5d129842c8a1963a339", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
     }
     buildTypes {
         release {
@@ -29,6 +41,7 @@ dependencies {
     compile 'com.alibaba:fastjson:1.1.52.android'
     compile project(':ViewPagerIndicatorLibrary')
     compile 'junit:junit:4.12'
+    compile 'cn.jiguang:jpush:2.1.9'
     compile files('src/main/libs/MobCommons-2016.0816.1507.jar')
     compile files('src/main/libs/MobTools-2016.0816.1507.jar')
     compile files('src/main/libs/ShareSDK-Core-2.7.6.jar')

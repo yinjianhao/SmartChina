@@ -1,17 +1,24 @@
 package com.me.smartchina.activity;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.me.smartchina.R;
 import com.me.smartchina.utils.PreferencesUtils;
+
+import cn.jpush.android.api.JPushInterface;
 
 public class SplashActivity extends Activity {
 
@@ -62,5 +69,17 @@ public class SplashActivity extends Activity {
 
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        JPushInterface.onResume(this);
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        JPushInterface.onPause(this);
+        super.onPause();
     }
 }

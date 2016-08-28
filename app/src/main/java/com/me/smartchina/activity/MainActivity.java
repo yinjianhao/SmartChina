@@ -41,6 +41,8 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
         initListener();
 
         showHideFragment(1);
+
+
     }
 
     private void initListener() {
@@ -199,7 +201,7 @@ public class MainActivity extends SlidingFragmentActivity implements View.OnClic
     }
 
     public ArrayList<NewsData.NewsInnerData> getNewsInnerData() {
-        FragmentManager fm =  getSupportFragmentManager();
+        FragmentManager fm = getSupportFragmentManager();
         LeftMenuFragment leftFragment = (LeftMenuFragment) fm.findFragmentByTag(TAG_LEFT_MENU);
         return leftFragment.getNewsInnerData();
     }
